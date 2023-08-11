@@ -1,19 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const HomeView = () => import(/* webpackChunkName: "Home" */ '@/views/home/index.vue')
-const Home2View = () => import(/* webpackChunkName: "Home" */ '@/views/home2/index.vue')
+const HomeView = () => import(/* webpackChunkName: "Home" */ '@/views/Home/index.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      redirect: '/home',
       name: 'home',
       component: HomeView,
-    },
-    {
-      path: '/home2',
-      name: 'home2',
-      component: Home2View,
+      children: [
+        {
+          path: '/home',
+          component: () => import('@/views/reactive/index.vue')
+        }
+      ]
     },
     {
       path: '/:pathMatch(.*)*',
