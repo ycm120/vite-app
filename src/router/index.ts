@@ -13,8 +13,20 @@ const router = createRouter({
         {
           path: '/home',
           component: () => import('@/views/reactive/index.vue')
+        },
+        {
+          path: '/home/menu01',
+          component: () => import('@/views/menu01/index.vue')
+        },
+        {
+          path: '/home/menu02',
+          component: () => import('@/views/menu02/index.vue')
         }
       ]
+    },
+    {
+      path: '/login',
+      component: () => import('@/views/login/index.vue')
     },
     {
       path: '/:pathMatch(.*)*',

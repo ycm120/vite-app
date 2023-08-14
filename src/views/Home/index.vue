@@ -5,15 +5,15 @@
         <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
           <a-menu-item key="1">
             <user-outlined />
-            <span>nav 1</span>
+            <span><router-link to="/home">首页</router-link></span>
           </a-menu-item>
           <a-menu-item key="2">
             <video-camera-outlined />
-            <span>nav 2</span>
+            <span><router-link to="/home/menu01">menu01</router-link></span>
           </a-menu-item>
           <a-menu-item key="3">
             <upload-outlined />
-            <span>nav 3</span>
+            <span><router-link to="/home/menu02">menu02</router-link></span>
           </a-menu-item>
         </a-menu>
       </a-layout-sider>
