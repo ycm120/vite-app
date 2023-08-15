@@ -1,16 +1,14 @@
 <template>
     <div class="login">
         <a-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
-            <h3 class="title">若依后台管理系统</h3>
-            <a-form-item label="username">
+            <h3 class="title">后台管理系统</h3>
+            <a-form-item name="username">
                 <a-input v-model="loginForm.username" type="text" size="large" auto-complete="off" placeholder="账号">
-                    <template #prefix><svg-icon icon-class="user" class="el-input__icon input-icon" /></template>
                 </a-input>
             </a-form-item>
-            <a-form-item label="password">
+            <a-form-item name="password">
                 <a-input v-model="loginForm.password" type="password" size="large" auto-complete="off" placeholder="密码"
                     @keyup.enter="handleLogin">
-                    <template #prefix><svg-icon icon-class="password" class="el-input__icon input-icon" /></template>
                 </a-input>
             </a-form-item>
             <a-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</a-checkbox>
